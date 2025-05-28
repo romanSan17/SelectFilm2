@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SelectFilm.FavoritesPage"
+    Title="Избранное"
+    BackgroundColor="White">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Понравившиеся фильмы"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <CollectionView
+                        SelectionMode="None"
+                        VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Gray" CornerRadius="10" Padding="10" Margin="5" HasShadow="True">
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="{Binding Poster}" WidthRequest="80" HeightRequest="120" Aspect="AspectFill" />
+                            <VerticalStackLayout VerticalOptions="Center">
+                                <Label Text="{Binding Title}" FontSize="18" FontAttributes="Bold" />
+                                <Label Text="{Binding Genre}" FontSize="14" TextColor="Gray" />
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>

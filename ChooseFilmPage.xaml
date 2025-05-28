@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SelectFilm.ChooseFilmPage"
+    Title="Выбор фильма"
+    BackgroundColor="White">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <!-- Выпадающий список жанров -->
+        <Picker x:Name="GenrePicker" Title="Выберите жанр" SelectedIndexChanged="OnGenreChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Все</x:String>
+                    <x:String>Боевик</x:String>
+                    <x:String>Комедия</x:String>
+                    <x:String>Драма</x:String>
+                    <x:String>Фантастика</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- Постер фильма -->
+        <Image x:Name="PosterImage"
+               Source="placeholder.jpg"
+               Aspect="AspectFill"
+               HeightRequest="300"
+               HorizontalOptions="Center" />
+
+        <!-- Название фильма -->
+        <Label x:Name="FilmTitleLabel"
+               Text="Название фильма"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <!-- Кнопки Лайк / Дизлайк -->
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="30">
+            <Button Text="👍 Лайк" Clicked="OnLikeClicked" />
+            <Button Text="👎 Дизлайк" Clicked="OnDislikeClicked" />
+        </HorizontalStackLayout>
+
+        <!-- Кнопка меню избранного -->
+        <Button Text="Посмотреть понравившиеся"
+                Clicked="OnFavoritesClicked"
+                BackgroundColor="LightGray"
+                TextColor="Black" />
+
+    </VerticalStackLayout>
+</ContentPage>

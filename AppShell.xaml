@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SelectFilm.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SelectFilm"
+    Shell.FlyoutBehavior="Disabled"
+    Title="SelectFilm">
+
+    <ShellContent Route="StartPage" ContentTemplate="{DataTemplate local:StartPage}" />
+    <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    <ShellContent Route="RegisterPage" ContentTemplate="{DataTemplate local:RegisterPage}" />
+    <ShellContent Route="ChooseFilmPage" ContentTemplate="{DataTemplate local:ChooseFilmPage}" />
+
+</Shell>
